@@ -1,0 +1,39 @@
+
+<div class="container">
+  <h1 class="main-title">Bookstore Management</h1>
+  <div class="search-bar">
+    <input [(ngModel)]="searchTitle" placeholder="Search by Title" />
+    <button class="btn btn-primary" (click)="searchByTitle()">Search Title</button>
+    <input [(ngModel)]="searchAuthor" placeholder="Search by Author" />
+    <button class="btn btn-success" (click)="searchByAuthor()">Search Author</button>
+    <button class="btn btn-secondary" (click)="showAll()">Show All</button>
+  </div>
+
+  <div class="form-card">
+    <h3>Edit Book</h3>
+    <input [(ngModel)]="formItem.title" placeholder="Title" />
+    <input [(ngModel)]="formItem.author" placeholder="Author" />
+    <input [(ngModel)]="formItem.price" type="number" placeholder="Price" />
+    <input [(ngModel)]="formItem.stock" type="number" placeholder="Stock" />
+    <div class="form-actions">
+      <button class="btn btn-primary" (click)="addBook()">{{ formItem.id !== undefined ? 'Update Book' : 'Add Book' }}</button>
+      <button class="btn btn-secondary" (click)="formItem = { title: '', author: '', price: 0, stock: 0 }">Cancel</button>
+    </div>
+  </div>
+
+  <div class="list-card">
+    <h4>Book List ({{ items.length }} books)</h4>
+    <div *ngFor="let item of items" class="book-card">
+      <div>
+        <strong>{{ item.title }}</strong><br />
+        <span><b>Author:</b> {{ item.author }}</span><br />
+        <span><b>Price:</b> ${{ item.price }}</span><br />
+        <span><b>Stock:</b> {{ item.stock }} units</span>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-success" (click)="editItem(item)">Edit</button>
+        <button class="btn btn-danger" (click)="deleteItem(item.id!)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

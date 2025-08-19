@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bookstore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>bookstore</h1>
+    <div>
+        <input id="title" placeholder="title">
+        <input id="author" placeholder="author">
+        <input id="price" placeholder="price" type="number">
+        <input id="stock" placeholder="stock" type="number">
+        <button onclick="addbook()">add book</button>
+    </div>
+    <div>
+        <input id="searchtitle" placeholder="search by title">
+        <button onclick="searchtitle()">search title</button>
+        <input id="searchauthor" placeholder="search by author">
+        <button onclick="searchauthor()">search author</button>
+        <button onclick="loadbooks()">show all</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>author</th>
+                <th>price</th>
+                <th>stock</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody id="booklist"></tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html> 

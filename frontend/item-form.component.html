@@ -1,0 +1,7 @@
+<form (ngSubmit)="save()">
+  <input [(ngModel)]="formItem.title" name="title" placeholder="Title" required />
+  <input [(ngModel)]="formItem.author" name="author" placeholder="Author" required />
+  <input [(ngModel)]="formItem.price" name="price" placeholder="Price" type="number" required />
+  <input [(ngModel)]="formItem.stock" name="stock" placeholder="Stock" type="number" required />
+  <button type="submit">{{ formItem.id ? 'Update' : 'Add' }}</button>
+</form>
